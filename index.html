@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html ng-app="NeolantApp" ng-cloak lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./dist/app.css">
+	<title>Неолант ТЗ</title>
+</head>
+<body ng-controller="MainCtrl">
+	<div class="container">
+		<div class="top">
+
+			<div class="add-item-form">
+				<div class="add-item-form__field">
+					<label for="add_item_name_input">Item name</label>
+					<input ng-disabled="isLoading"
+						ng-model="newItemName"
+						type="text"
+						name="item_name"
+						id="add_item_name_input">
+				</div>
+				<div class="add-item-form__field">
+					<label for="add_item_description_input">Item description</label>
+					<input ng-disabled="isLoading"
+						ng-model="newItemDesc"
+						type="text"
+						name="item_description"
+						id="add_item_description_input">
+				</div>
+
+				<div class="add-item-form__field">
+					<button class="add-item-form__button"
+						ng-disabled="(!newItemName.lenght && !newItemDesc.length) || isLoading"
+						ng-click="addNewItem()">+ Добавить</button>
+				</div>
+
+			</div>
+
+			<div class="description">
+				{{items[activeItemIndex].description}}
+			</div>
+
+		</div>
+
+
+		<div class="main">
+
+			<div ng-show="isLoading">Загрузка...</div>
+
+			<div ng-show="!items.length && !isLoading">Нет записей</div>
+
+			<div class="main__item"
+				ng-show="!isLoading"
+				ng-repeat="i in items track by $index"
+				ng-click="setItemActive($index)"
+				ng-class="{'item__active': activeItemIndex === $index}">
+				<strong>{{i.name}}</strong>
+			</div>
+
+		</div>
+
+
+		<div class="footer">
+			ТЗ для Неолант 2020
+		</div>
+
+	</div>
+
+	<script src="./dist/app.js"></script>
+</body>
+</html>

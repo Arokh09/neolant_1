@@ -1,0 +1,82 @@
+$borderColor: gray;
+$mainColor: AntiqueWhite;
+$activeColor: Coral;
+
+body {
+	display: flex;
+	flex-direction: column;
+	// border: 1px solid red;
+	margin: 0px;
+	justify-content: center;
+	align-items: center;
+	justify-content: space-around;
+}
+
+.container {
+	background: $mainColor;
+	display:  flex;
+	flex-direction: column;
+	height: 100vh;
+	min-width: 500px;
+	max-width: 50%;
+}
+
+
+.top {
+	display: flex;
+	max-height: 50%;
+}
+
+
+.add-item-form {
+	border: 1px solid $borderColor;
+}
+
+.add-item-form__field {
+	margin: 5px;
+
+	label {
+		display: block;
+	}
+}
+
+.add-item-form__button {
+	width: 100%;
+}
+
+.description {
+	border: 1px solid $borderColor;
+	padding: 5px;
+	flex: 1;
+	overflow: auto;
+}
+
+
+.main {
+	display: flex;
+	flex-direction: column;
+	flex: 1;
+	overflow: auto;
+	border: 1px solid $borderColor;
+}
+
+
+.main__item {
+	padding: 5px;
+	margin: 5px;
+	border: 1px solid $borderColor;
+	white-space: nowrap;
+}
+
+.item__active {
+	background: $activeColor;
+}
+
+
+.footer {
+	flex: 0 0 auto;
+	text-align: right;
+	height: 50px;
+	padding: 5px;
+	border: 1px solid $borderColor;
+}
