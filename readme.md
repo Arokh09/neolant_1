@@ -7,7 +7,7 @@
 после этого в папке dist/ появятся файлы app.css и app.js
 теперь можно запустить index.html локально или с помощью веб-сервера (для ie 11)
 
-т.к. Internet Explorer 11 не поддерживает промисы используется полифил @babel/polyfill
+Для работы в Internet Explorer используется полифил @babel/polyfill
 
 
 Работающее приложение можно посмотреть по адресу: https://plnkr.co/edit/xgHPYfKUPJIolciO (не работает в ie 11)
